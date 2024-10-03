@@ -113,18 +113,18 @@ class _DecoratedBoxTransitionExampleState
 
   Widget _buildCapybaraItem(int index, String imagePath, Animation<double> animation) {
     return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 10.0), // Espaçamento horizontal
+      padding: const EdgeInsets.symmetric(horizontal: 10.0),
       child: DecoratedBoxTransition(
         decoration: decorationTween.animate(_controller),
         child: MouseRegion(
           onEnter: (_) {
             setState(() {
-              _hoveredIndex = index; // Atualiza o índice da capivara "hovered"
+              _hoveredIndex = index;
             });
           },
           onExit: (_) {
             setState(() {
-              _hoveredIndex = null; // Reseta o índice quando o mouse sai
+              _hoveredIndex = null;
             });
           },
           child: SizeTransition(
@@ -134,7 +134,7 @@ class _DecoratedBoxTransitionExampleState
               height: 200,
               padding: const EdgeInsets.all(10),
               child: AnimatedOpacity(
-                opacity: _hoveredIndex == index ? 1.0 : 0.0, // Exibe a capivara apenas se estiver "hovered"
+                opacity: _hoveredIndex == index ? 1.0 : 0.0,
                 duration: const Duration(milliseconds: 300),
                 child: Image.asset(imagePath),
               ),
